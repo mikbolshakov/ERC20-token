@@ -1,0 +1,183 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "_token",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Bought",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Sell",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "buy",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "marketBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "sell",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "thisAddr",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/MarketPlace.sol": "MarketPlace"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ERC20.sol": {
+			"keccak256": "0x57b648efe501b51173f6a2f3a8f6762177a60ed1ee8b011690a0e53850a06216",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a72dd2515c4c6e340ad93682f91ab7ad48ba4666a992fcfaec28bda51cbdf761",
+				"dweb:/ipfs/QmXzzH5Q4JgJjHVUsPHr9MT3M22BCyzKivHKpxDc3GxZsM"
+			]
+		},
+		"contracts/MarketPlace.sol": {
+			"keccak256": "0x6cf2518c378785866dd3804aac96a464a11ffe48a29446f99846dbeaf6cb1037",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9053d0a573cfd6aa4cb7911e8660bbcdc71564077cbaf8518add310818a354f0",
+				"dweb:/ipfs/QmcF9VUL7yAPqWjF3YHcRmqh9Hy4d5N6p7sTJQPZMA9ubW"
+			]
+		},
+		"contracts/TinToken.sol": {
+			"keccak256": "0xd54919aecb022b917ee05e1d45b121c89b99330ce93e8a1b1bb7d57ab365090e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://96c920bf4aa2c97741d079b04cc88a04d91ac66fb5624f27b205ced0dcbfd079",
+				"dweb:/ipfs/QmZt1jKxwi8Eoo9CtD2acjD8iFng4YictiHNt2gWZCkSjx"
+			]
+		}
+	},
+	"version": 1
+}

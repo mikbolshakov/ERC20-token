@@ -5,18 +5,20 @@ pragma solidity ^0.8.0;
 import "./ERC20.sol";
 
 contract TinToken is IERC20 {
+    address public oneOwner = msg.sender;
     uint totalTokens;
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowances;
     string public name = "TinToken";
     string public symbol = "TTN";
 
-    constructor(uint initialSupply) {
-        mint(initialSupply);
-    }
-
     modifier enoughTokens(address _from, uint _amount) {
         require(balanceOf(_from) >= _amount, "Not enough tokens!");
+        _;
+    }
+
+    modifier onlyOwner {
+        require(msg.sender == oneOwner, "You are not an owner!");
         _;
     }
 
@@ -32,25 +34,21 @@ contract TinToken is IERC20 {
         return balances[account];
     }
 
-    // списываем со счета отправителя, зачисляем на счет получателя
     function transfer(address to, uint amount) external override enoughTokens(msg.sender, amount) {
         balances[msg.sender] -= amount;
         balances[to] += amount;
         emit Transfer(msg.sender, to ,amount);
     }
 
-    // сколько денег владелец может отправить получателю
     function allowance(address owner, address spender) external override view returns(uint) {
         return allowances[owner][spender];
     }
 
-    // принимает адрес получателя и количество токенов
     function approve(address spender, uint amount) external override {
         allowances[msg.sender][spender] = amount;
         emit Approval(msg.sender, spender, amount);
     }
 
-    // другие смарт контракты могут переводить деньги, если это разрешено
     function transferFrom(address sender, address recipient, uint amount) external override enoughTokens(sender, amount) {
         allowances[sender][recipient] -= amount;
         balances[sender] -= amount;
@@ -58,13 +56,13 @@ contract TinToken is IERC20 {
         emit Transfer(sender, recipient, amount);
     }
 
-    function mint(uint amount) public {
+    function mint(uint amount) public onlyOwner {
         balances[msg.sender] += amount;
         totalTokens += amount;
         emit Transfer(address(0), msg.sender, amount);
     }
 
-    function burn(uint amount) public enoughTokens(msg.sender, amount) {
+    function burn(uint amount) public enoughTokens(msg.sender, amount) onlyOwner {
         balances[msg.sender] -= amount;
         totalTokens -= amount;
         emit Transfer(msg.sender, address(0), amount);

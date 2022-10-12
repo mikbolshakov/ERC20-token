@@ -171,11 +171,11 @@
 			]
 		},
 		"contracts/TinToken.sol": {
-			"keccak256": "0xd54919aecb022b917ee05e1d45b121c89b99330ce93e8a1b1bb7d57ab365090e",
+			"keccak256": "0x15c7aa93c26913f870fefc71aed5502adeafc76795a385dc52af4388d931493c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://96c920bf4aa2c97741d079b04cc88a04d91ac66fb5624f27b205ced0dcbfd079",
-				"dweb:/ipfs/QmZt1jKxwi8Eoo9CtD2acjD8iFng4YictiHNt2gWZCkSjx"
+				"bzz-raw://b556b877e4d44e282856b3f1488b339dd0e6fc001ca4b5c845154b13133d38e0",
+				"dweb:/ipfs/QmV33zyDBBsz2QmabVS6CjEDyiyneq7Dg1QqrqR7w1xvh1"
 			]
 		}
 	},

@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -173,16 +178,16 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "oneOwner",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "address",
-						"name": "",
+						"name": "_newUser",
 						"type": "address"
 					}
 				],
-				"stateMutability": "view",
+				"name": "registrationBonus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -193,6 +198,19 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "thisOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -293,11 +311,11 @@
 			]
 		},
 		"contracts/TinToken.sol": {
-			"keccak256": "0x15c7aa93c26913f870fefc71aed5502adeafc76795a385dc52af4388d931493c",
+			"keccak256": "0x59d60b3fc515c93a29c271aea15ae2815bc88e749a309aec3ed1add92c46cafa",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b556b877e4d44e282856b3f1488b339dd0e6fc001ca4b5c845154b13133d38e0",
-				"dweb:/ipfs/QmV33zyDBBsz2QmabVS6CjEDyiyneq7Dg1QqrqR7w1xvh1"
+				"bzz-raw://799d055302abba463852e72ac0ce65bffae59ec747e529fd1c8731ac7013592f",
+				"dweb:/ipfs/Qmb68Eu7Z9tU27V9Gd3tvyu78QYjf1yvtTAxpELAqrxs8h"
 			]
 		}
 	},

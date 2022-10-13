@@ -5,12 +5,18 @@ pragma solidity ^0.8.0;
 import "./ERC20.sol";
 
 contract TinToken is IERC20 {
-    address public oneOwner = msg.sender;
+    address public thisOwner;
+    uint startSupply = 1000000000;
     uint totalTokens;
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowances;
     string public name = "TinToken";
     string public symbol = "TTN";
+
+    constructor() {
+        thisOwner = msg.sender;
+        mint(startSupply);
+    }
 
     modifier enoughTokens(address _from, uint _amount) {
         require(balanceOf(_from) >= _amount, "Not enough tokens!");
@@ -18,12 +24,12 @@ contract TinToken is IERC20 {
     }
 
     modifier onlyOwner {
-        require(msg.sender == oneOwner, "You are not an owner!");
+        require(msg.sender == thisOwner, "You are not an owner!");
         _;
     }
 
     function decimals() public override pure returns(uint) {
-        return 0;
+        return 3;
     }
 
     function totalSupply() public override view returns(uint) {
@@ -49,7 +55,7 @@ contract TinToken is IERC20 {
         emit Approval(msg.sender, spender, amount);
     }
 
-    function transferFrom(address sender, address recipient, uint amount) external override enoughTokens(sender, amount) {
+    function transferFrom(address sender, address recipient, uint amount) public override enoughTokens(sender, amount) {
         allowances[sender][recipient] -= amount;
         balances[sender] -= amount;
         balances[recipient] += amount;
@@ -66,6 +72,11 @@ contract TinToken is IERC20 {
         balances[msg.sender] -= amount;
         totalTokens -= amount;
         emit Transfer(msg.sender, address(0), amount);
+    }
+
+    function registrationBonus(address _newUser) public {
+        balances[_newUser] += 10;
+        thisOwner.balance -= 10;
     }
 
     fallback() external payable{

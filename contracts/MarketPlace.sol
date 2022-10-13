@@ -46,10 +46,10 @@ contract MarketPlace {
 
     function withdraw(uint amount) public onlyOwner {
         require(amount <= marketBalance(), "Not enough funds!");
-        payable(msg.sender).transfer(amount);
+        payable(msg.sender).transfer(amount * _rate());
     }
 
     function _rate() private pure returns(uint) {
-        return 1 ether; 
+        return 0.001 ether; 
     }
 }

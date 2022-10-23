@@ -178,19 +178,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_newUser",
-						"type": "address"
-					}
-				],
-				"name": "registrationBonus",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "symbol",
 				"outputs": [
@@ -311,11 +298,11 @@
 			]
 		},
 		"contracts/TinToken.sol": {
-			"keccak256": "0x59d60b3fc515c93a29c271aea15ae2815bc88e749a309aec3ed1add92c46cafa",
+			"keccak256": "0x864343ec990eb97a976e22f8c9a0426b34ac85e09f811d5c0dd0ff26f6cdafd6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://799d055302abba463852e72ac0ce65bffae59ec747e529fd1c8731ac7013592f",
-				"dweb:/ipfs/Qmb68Eu7Z9tU27V9Gd3tvyu78QYjf1yvtTAxpELAqrxs8h"
+				"bzz-raw://69a58560c15fb2a831ceb69947376f08685bb55ec9b075d2295ead945ceeb2df",
+				"dweb:/ipfs/QmZMuMBrCqTftk7ndS7tGqa5oZFovumKKU9guU1PZ8oE2v"
 			]
 		}
 	},
